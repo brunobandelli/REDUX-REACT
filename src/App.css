@@ -1,7 +1,8 @@
 .App {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /*align-items: stretch;*/     /*VAI ESTICAR O CONTEUDO*/
+  text-align: center;
 }
 
 h1 {
