@@ -1,5 +1,5 @@
 import './App.css';
-import Card from './components/Card';
+
 
 
 import Intervalo from './components/Intervalo';
