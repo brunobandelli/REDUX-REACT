@@ -3,7 +3,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import Card from './Card'
-import { alterarNumeroMinimo } from '../store/actions/numeros'
+import { alterarNumeroMinimo, alterarNumeroMaximo } from '../store/actions/numeros'
 
 // eslint-disable-next-line import/no-anonymous-default-export
 function Intervalo(props) {
@@ -18,7 +18,8 @@ function Intervalo(props) {
             </span>
             <span>
                 <strong>Máximo:</strong>
-                <input type="number" value={max} readOnly/>
+                <input type="number" value={max} 
+                  onChange={e => props.alterarMaximo(+e.target.value)}/>
             </span>
             </div>
         </Card>
@@ -39,6 +40,11 @@ function mapDispatchToProps(dispatch){
         alterarMinimo(novoNumbero){
             // action creator -> action
             const action = alterarNumeroMinimo(novoNumbero)
+            dispatch(action)
+        },
+        alterarMaximo(novoNumbero){
+            // action creator -> action
+            const action = alterarNumeroMaximo(novoNumbero)
             dispatch(action)
         }
     }
